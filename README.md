@@ -6,25 +6,37 @@ If no device is connected for a while to the hotspot it will search for neworks 
 You need to have a wpa_supplicant-_device_.conf file similiar to this.
 
 ```
-country=FR                                                                        
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev                           
-update_config=1                                                                   
+country=CH
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
 ap_scan=1
 
 ### your network(s) ###    
-network={                                                                         
-    priority=10       # add a priority higher then 0 to any network                                                         
-    ssid="yourWifi"   # except the access point's one!
-    psk="passphrase"                                                 
-} 
+network={
+    priority=11
+    ssid="home"
+    scan_ssid=1
+    psk="123456"
+    key_mgmt=WPA-PSK
+	id_str="home"
+}
 
-### your hotspot ###                                                                                  
-network={                                                                        
-    ssid="accesspoint"    # your access point's name                                                            
-    mode=2                                                                       
-    key_mgmt=WPA-PSK                                                             
-    psk="passphrase"      # your access point's password                                    
-    frequency=2462                                                               
+network={
+    priority=10
+    ssid="office"
+    scan_ssid=1
+    psk="123456"
+    key_mgmt=WPA-PSK
+	id_str="office"
+}
+
+### your hotspot ###
+network={
+    ssid="RaspberryPiAP"
+    mode=2
+    key_mgmt=WPA-PSK
+    psk="123456"
+	id_str="InternalHotspot"
 }
 ```
 
