@@ -18,7 +18,7 @@ network={
     scan_ssid=1
     psk="123456"
     key_mgmt=WPA-PSK
-	id_str="home"
+    id_str="home"
 }
 
 network={
@@ -27,7 +27,7 @@ network={
     scan_ssid=1
     psk="123456"
     key_mgmt=WPA-PSK
-	id_str="office"
+    id_str="office"
 }
 
 ### your hotspot ###
@@ -36,7 +36,7 @@ network={
     mode=2
     key_mgmt=WPA-PSK
     psk="123456"
-	id_str="InternalHotspot"
+    id_str="InternalHotspot"
 }
 ```
 
